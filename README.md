@@ -1,7 +1,7 @@
 # Welcome to Weather!
 # just another weather web service :) 
 
-Keep your face to the sun and you will never see the shadows.
+# Keep your face to the sun and you will never see the shadows.
 
 # Have a great day
 # next-weather
