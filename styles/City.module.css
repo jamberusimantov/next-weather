@@ -1,0 +1,157 @@
+.container {
+    padding: .5rem;
+    width: 100%;
+    background-color: #333;
+    border: #F4CBB2 1px solid;
+    border-radius: 5px;
+    color: #F4CBB2;
+}
+
+.container p {
+    margin: 0;
+    font-size: large;
+}
+
+.name {
+    font-size: xx-large !important;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    /* ltr */
+    flex-direction: row-reverse;
+}
+
+.top_left,
+.top_right_left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: .5rem 0;
+}
+
+.name_search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.search {
+    margin-right: .5rem !important;
+}
+
+.search:hover {
+    cursor: pointer;
+}
+
+.form {
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+.form_container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.form_close {
+    color: red;
+    font-weight: 700;
+    cursor: pointer;
+    margin-right: 1rem;
+}
+
+.blur {
+    filter: blur(10px);
+}
+
+.top_right {
+    display: flex;
+    margin: .5rem 0;
+    /* ltr */
+    flex-direction: row-reverse;
+}
+
+.top_right_temp_unit_image {
+    display: flex;
+    justify-content: space-between;
+}
+
+.top_right_temp_unit {
+    display: flex;
+}
+
+.top_right_temp {
+    display: flex;
+    align-items: center;
+    font-size: 5em;
+}
+
+.top_right_unit {
+    margin: 0 5px;
+}
+
+.title:hover,
+.top_right_unit:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.top_right_image {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.image {
+    width: 95px;
+    height: 95px;
+}
+
+.emphasize {
+    color: white;
+}
+
+.emphasize_unit {
+    position: relative;
+    top: -4px;
+}
+
+.titleToggle {
+    display: flex;
+    margin: 2em 0;
+}
+
+.titleToggle p {
+    /* ltr */
+    margin-right: .5rem;
+}
+
+@media (max-width: 700px) {
+    .top {
+        flex-direction: column;
+    }
+    .top_right {
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 500px) {
+    .top_right {
+        /* ltr */
+        flex-direction: column-reverse;
+    }
+    .top_right_temp_unit_image {
+        justify-content: space-between;
+    }
+}

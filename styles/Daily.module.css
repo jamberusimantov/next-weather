@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.day p {
+    text-align: center;
+}
+
+.image {
+    width: 95px;
+    height: 95px;
+}
+
+@media (max-width: 700px) {
+    .container {
+        flex-direction: column;
+    }
+    .day {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .day p {
+        width: 33.33%;
+    }
+    .image_unit {
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: center;
+    }
+}

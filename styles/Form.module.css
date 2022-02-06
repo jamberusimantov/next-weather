@@ -1,0 +1,70 @@
+.title,
+.description {
+    text-align: center;
+}
+
+.title span {
+    color: #4078c0;
+}
+
+.title {
+    margin: 0;
+    line-height: 1.15;
+    font-size: 3.8rem;
+}
+
+.description {
+    margin: 2rem 0;
+    padding: 0 .5rem;
+    line-height: 1.5;
+    font-size: 1.5rem;
+}
+
+.image {
+    margin-left: 1rem;
+}
+
+.form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.textInput {
+    font-size: large;
+    border: 1px solid #4078c0;
+    padding: 5px;
+    border-radius: 3px;
+    display: block;
+    margin: 5px auto;
+}
+
+.textInput:focus {
+    outline: none;
+    border-color: #4078c0;
+    box-shadow: 0 0 10px #c9510c;
+}
+
+.radioToggle {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.radio {
+    font-size: small;
+}
+
+.submitButton {
+    display: block;
+    margin: 10px auto;
+    padding: .5rem;
+    font-size: 1em;
+    background: #4078c0;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 25px auto;
+}
