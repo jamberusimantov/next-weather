@@ -5,8 +5,7 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "lint": "next lint",
-        "heroku-postbuild": "npm install && npm run build"
+        "lint": "next lint"
     },
     "dependencies": {
         "@types/d3-interpolate": "^3.0.1",
