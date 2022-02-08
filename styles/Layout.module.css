@@ -33,18 +33,6 @@
     margin: 0 0.5rem;
 }
 
-.logo_linkedin {
-    color: #0e76a8;
-}
-
-.logo_github {
-    color: #4078c0
-}
-
-.fa-github {
-    color: #4078c0
-}
-
 @media (max-width: 500px) {
     .container {
         padding: 0 .5rem;
