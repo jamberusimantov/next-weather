@@ -14,8 +14,7 @@ const Footer = () => {
           rel="noopener noreferrer">
           <span>
             <Image
-              className={styles.logo_linkedin}
-              src="/linked in.svg"
+              src="/github.svg"
               alt=""
               width={35}
               height={35}
@@ -28,8 +27,7 @@ const Footer = () => {
           rel="noopener noreferrer">
           <span>
             <Image
-              className={styles.logo_github}
-              src="/github.svg"
+             src="/linked in.svg"
               alt=""
               width={35}
               height={35} />
