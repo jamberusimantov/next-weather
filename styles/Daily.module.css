@@ -3,6 +3,20 @@
     justify-content: space-evenly;
 }
 
+.day {
+    border-radius: 10px;
+}
+
+.day:hover {
+    background-color: #555;
+    cursor: pointer;
+}
+
+.day:active {
+    background-color: transparent;
+    transform: scale(1.2);
+}
+
 .day p {
     text-align: center;
 }

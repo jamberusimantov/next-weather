@@ -1,31 +1,26 @@
 import React from "react";
-import { daily } from '../dir/types'
+import { iconObj, day } from '../dir/types'
 import Image from "next/image";
 import { getTemp } from '../dir/functions'
 import styles from '../styles/Daily.module.css'
 
-const Daily = (props: { cb: () => daily, unit: string }) => {
+const getTheCommonIcon = (iconArr: iconObj[]) => {
+    let max: iconObj = { icon: '', counter: 0 };
+    iconArr.forEach((obj) => {
+        if (obj.counter > max.counter) {
+            max = obj
+        }
+    })
+    return max.icon;
+}
 
-    const arr = props.cb();
-
-    const getTheCommonIcon = (iconArr: { icon: string, counter: number }[]) => {
-        let max: {
-            icon: string,
-            counter: number
-        } = { icon: '', counter: 0 };
-        iconArr.forEach((icon, i) => {
-            if (icon.counter > max.counter) {
-                max = icon
-            }
-        })
-        return max.icon;
-    }
-
+const Daily = (props: { daily: day[], unit: string, changeDay: (day: number) => void }) => {
     return (
         <div className={styles.container}>
-            {React.Children.toArray(arr.map((obj) =>
+            {React.Children.toArray(props.daily.map((obj, i) =>
                 <div
                     key={`daily_obj_${obj.day}`}
+                    onClick={() => props.changeDay(i)}
                     className={styles.day}>
                     <p>{obj.localDay}</p>
                     <div className={styles.image_unit}>
@@ -38,8 +33,8 @@ const Daily = (props: { cb: () => daily, unit: string }) => {
                             />
                         </div>
                         <p>
-                            <span>{getTemp(obj.min, props.unit)}</span>°-
-                            <span>{getTemp(obj.max, props.unit)}</span>°
+                            <span>{getTemp(obj.temp.min, props.unit)}</span>°-
+                            <span>{getTemp(obj.temp.max, props.unit)}</span>°
                         </p>
                     </div>
                 </div>

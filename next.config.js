@@ -2,7 +2,7 @@
 const nextConfig = {
     reactStrictMode: true,
     images: {
-        domains: ['openweathermap.org'],
+        domains: ['openweathermap.org', 'purecatamphetamine.github.io'],
     },
     serverRuntimeConfig: {
         // Will only be available on the server side

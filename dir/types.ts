@@ -1,23 +1,36 @@
+import type { AppProps } from 'next/app'
+import { ReactElement, ReactNode } from 'react'
+import type { NextPage } from 'next'
+
+type NextPageWithLayout = NextPage & {
+    getLayout: (page: ReactElement) => ReactNode
+}
+type AppPropsWithLayout = AppProps & {
+    Component: NextPageWithLayout
+}
+type query = {
+    unit: string
+    city: string
+}
 type context = {
     query: query
-};
-type city_props = {
-    success: boolean,
-    error?: error_props,
-    data?: city,
-    context: query
 };
 type error_props = {
     cod: string,
     message: string
 };
-type query = {
-    unit: string
-    city: string
-};
-type city = {
+type data = {
     name: string,
-    list: hourly[],
+    country: string,
+    daily: day[],
+    days: hourly[][],
+    hourly: hourly[],
+};
+type city_props = {
+    success: boolean,
+    context: query,
+    error?: error_props,
+    data: data,
 };
 type hourly = {
     clouds: {
@@ -45,41 +58,48 @@ type hourly = {
         temp_max: number,
     }
 };
-type daily = {
+type chartTheme = {
+    [key: string]: {
+        primary: string,
+        secondary: string,
+    },
+};
+type minMax = {
+    min: number,
+    max: number
+}
+type iconObj = {
+    icon: string,
+    counter: number,
+}
+type day = {
     day: number,
     localDay: string,
-    min: number,
-    max: number,
-    icons: { icon: string, counter: number, }[],
-}[];
-type themeType = {
-    temperature: {
-        primary: string,
-        secondary: string
-    },
-    rain: {
-        primary: string,
-        secondary: string
-    },
-    wind: {
-        primary: string,
-        secondary: string
-    },
+    localDate: string,
+    clouds: minMax,
+    temp: minMax,
+    rain: minMax,
+    humidity: minMax,
+    wind: minMax,
+    icons: iconObj[],
 };
 type chartData = {
     time: string,
     temperature: string,
     rain: number,
     wind: number,
-    windDeg: number,
 }[];
+
+
 export type {
+    AppPropsWithLayout,
     context,
     city_props,
     error_props,
-    city,
     hourly,
-    daily,
-    themeType,
-    chartData
+    chartTheme,
+    day,
+    iconObj,
+    data,
+    chartData,
 }

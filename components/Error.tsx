@@ -1,6 +1,9 @@
 import Image from 'next/image'
 import styles from '../styles/Error.module.css'
 import { error_props } from '../dir/types'
+
+
+
 export default function Error(props: { error: error_props }) {
 
     return (

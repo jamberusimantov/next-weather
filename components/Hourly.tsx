@@ -1,18 +1,19 @@
 import React from 'react';
 import { hourly, chartData } from '../dir/types'
-import { getDay, getTemp } from '../dir/functions';
+import { getDaily, getTemp } from '../dir/functions';
 import { Chart } from '.';
 
-const Hourly = (props: { list: hourly[], unit: string, title: string }) => {
-
+const Hourly = (props: { hourly: hourly[][], unit: string, title: string, day: number | undefined }) => {
     const data: chartData = [];
-    props.list.slice(0, 8).forEach((obj) => {
+    let arr: hourly[] = [];
+
+    arr = props.hourly[props.day || 0]
+    arr.forEach((obj) => {
         data.push({
-            time: getDay(obj.dt).localTime,
+            time: getDaily(obj.dt).localTime,
             temperature: getTemp(obj.main.temp, props.unit),
             rain: obj.rain ? obj.rain['3h'] : 0,
             wind: obj.wind.speed,
-            windDeg: obj.wind.deg,
         })
     })
 

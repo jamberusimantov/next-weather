@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { themeType, chartData } from '../dir/types'
+import { chartTheme, chartData } from '../dir/types'
 import { AreaChart, Area, XAxis, LabelList } from "recharts";
 import styles from '../styles/Hourly.module.css'
 
-const theme: themeType = {
+const theme: chartTheme = {
     temperature: {
         primary: '#c9510c',
         secondary: '#F4CBB2'
@@ -20,13 +20,11 @@ const theme: themeType = {
 
 const Chart = (props: { data: chartData, title: string }) => {
     const [width, setWidth] = useState(window.innerWidth);
-    
+
     useEffect(() => {
-        const resize = () => { setWidth(window.innerWidth) }
+        const resize = () => setWidth(window.innerWidth);
         window.addEventListener('resize', resize)
-        return (() => {
-            window.removeEventListener('resize', resize)
-        })
+        return (() => window.removeEventListener('resize', resize))
     }, [])
 
     return (
@@ -51,8 +49,8 @@ const Chart = (props: { data: chartData, title: string }) => {
                 <Area
                     type="monotone"
                     dataKey={props.title}
-                    fill={theme[props.title as keyof themeType].primary}
-                    stroke={theme[props.title as keyof themeType].secondary}
+                    fill={theme[props.title].primary}
+                    stroke={theme[props.title].secondary}
                 >
                     <LabelList dataKey={props.title} position="top" />
                 </Area>
