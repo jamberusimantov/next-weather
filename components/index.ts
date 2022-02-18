@@ -15,5 +15,5 @@ export {
     Form,
     Daily,
     Hourly,
-    Chart
+    Chart,
 }

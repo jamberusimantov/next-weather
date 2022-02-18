@@ -2,3 +2,27 @@
     display: flex;
     justify-content: center;
 }
+
+.emphasize {
+    color: white;
+}
+
+.emphasize_unit {
+    position: relative;
+    top: -4px;
+}
+
+.title:hover {
+    cursor: pointer;
+    color: white;
+}
+
+.titleToggle {
+    display: flex;
+    margin: 2em 0;
+}
+
+.titleToggle p {
+    /* ltr */
+    margin-right: .5rem;
+}

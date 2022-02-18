@@ -1,18 +1,9 @@
 import React from "react";
-import { iconObj, day } from '../dir/types'
+import { day } from '../dir/types'
 import Image from "next/image";
 import { getTemp } from '../dir/functions'
 import styles from '../styles/Daily.module.css'
 
-const getTheCommonIcon = (iconArr: iconObj[]) => {
-    let max: iconObj = { icon: '', counter: 0 };
-    iconArr.forEach((obj) => {
-        if (obj.counter > max.counter) {
-            max = obj
-        }
-    })
-    return max.icon;
-}
 
 const Daily = (props: { daily: day[], unit: string, changeDay: (day: number) => void }) => {
     return (
@@ -20,13 +11,16 @@ const Daily = (props: { daily: day[], unit: string, changeDay: (day: number) => 
             {React.Children.toArray(props.daily.map((obj, i) =>
                 <div
                     key={`daily_obj_${obj.day}`}
-                    onClick={() => props.changeDay(i)}
+                    onClick={() => {
+                        window.scrollTo({ top: 0, behavior: "smooth" });
+                        props.changeDay(i)
+                    }}
                     className={styles.day}>
                     <p>{obj.localDay}</p>
                     <div className={styles.image_unit}>
                         <div className={styles.image}>
                             <Image
-                                src={`https://openweathermap.org/img/wn/${getTheCommonIcon(obj.icons)}@2x.png`}
+                                src={`https://openweathermap.org/img/wn/${obj.icon.icon}@2x.png`}
                                 alt=""
                                 width={500}
                                 height={500}

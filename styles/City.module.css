@@ -75,7 +75,6 @@
     margin: 0 5px;
 }
 
-.title:hover,
 .top_right_unit:hover {
     cursor: pointer;
     color: white;
@@ -96,19 +95,13 @@
     color: white;
 }
 
+.bactToCurrent {
+    cursor: pointer;
+}
+
 .emphasize_unit {
     position: relative;
     top: -4px;
-}
-
-.titleToggle {
-    display: flex;
-    margin: 2em 0;
-}
-
-.titleToggle p {
-    /* ltr */
-    margin-right: .5rem;
 }
 
 .flag {
@@ -119,12 +112,24 @@
     height: 1em;
 }
 
+@media (max-width: 800px) {
+    .top_right_temp {
+        font-size: 3em;
+    }
+}
+
 @media (max-width: 700px) {
     .top {
         flex-direction: column;
     }
     .top_right {
         justify-content: space-between;
+    }
+}
+
+@media (max-width: 600px) {
+    .top_right_temp {
+        font-size: 2em;
     }
 }
 

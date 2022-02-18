@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react'
+import styles from '../styles/Hourly.module.css'
+import { Chart } from '.'
 import { hourly, chartData } from '../dir/types'
 import { getDaily, getTemp } from '../dir/functions';
-import { Chart } from '.';
 
-const Hourly = (props: { hourly: hourly[][], unit: string, title: string, day: number | undefined }) => {
+const Hourly = (props: { unit: string, hourly: hourly[][], day: number | undefined }) => {
+    const [title, setTitle] = useState('temperature');
+    const titles = ['temperature', 'rain', 'wind'];
+
     const data: chartData = [];
     let arr: hourly[] = [];
 
@@ -17,8 +21,21 @@ const Hourly = (props: { hourly: hourly[][], unit: string, title: string, day: n
         })
     })
 
-    return (<Chart data={data} title={props.title} />)
+    return (<>
+        <div className={styles.titleToggle}>
+            {React.Children.toArray(titles.map((name: string) =>
+                <p
+                    key={`title_${name}`}
+                    className={styles.title + ' ' + `${title === name ? styles.emphasize_unit + ' ' + styles.emphasize : ''}`}
+                    onClick={() => setTitle(name)}
+                >
+                    {name[0].toUpperCase() + name.substring(1)}
+                </p>
+            ))}
+        </div>
+        <Chart data={data} title={title} />
+    </>
+    )
 }
 
 export default Hourly
-

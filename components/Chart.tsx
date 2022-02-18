@@ -28,7 +28,7 @@ const Chart = (props: { data: chartData, title: string }) => {
     }, [])
 
     return (
-        <div id={styles.chart} className={styles.container}>
+        <div className={styles.container}>
             <AreaChart
                 width={width}
                 compact

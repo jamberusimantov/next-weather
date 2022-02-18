@@ -20,11 +20,12 @@ type error_props = {
     message: string
 };
 type data = {
-    name: string,
-    country: string,
+    city: {
+        name: string,
+        country: string,
+    }
     daily: day[],
     days: hourly[][],
-    hourly: hourly[],
 };
 type city_props = {
     success: boolean,
@@ -81,7 +82,7 @@ type day = {
     rain: minMax,
     humidity: minMax,
     wind: minMax,
-    icons: iconObj[],
+    icon:iconObj,
 };
 type chartData = {
     time: string,

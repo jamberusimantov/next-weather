@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <span>
-        Made with ❤ in Israel © 2022 Siman tov Jamberu. All rights reserved.
+        Made with ❤ in Israel &copy; 2022 Siman tov Jamberu. All rights reserved.
       </span>
       <div>
         <a
