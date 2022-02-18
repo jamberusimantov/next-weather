@@ -12,6 +12,10 @@
     top: -4px;
 }
 
+.title {
+    padding: 0 0.5rem;
+}
+
 .title:hover {
     cursor: pointer;
     color: white;
